@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Dom Summery</title>
+</head>
+
+<body>
+    <h1>Final DOM event Handelners</h1>
+    <h3 id="handeler-status">Default Text</h3>
+
+
+    <p id="para">Default Input Text</p>
+    <input id="input-filed" type="text">
+    <button id="btn-update">Update</button>
+    <br><br>
+
+
+    <button onclick="handelOnclick()">Handel Event by Onlick function</button>
+
+
+    <button id="event-listener">Handel event by addEventListener</button>
+
+
+    <script>
+        function handelOnclick() {
+            const handelerStutas = document.getElementById('handeler-status').innerText = 'Handel by Function';
+        }
+        // Option 2
+        document.getElementById('event-listener').addEventListener('click', function () {
+            const handelerStutas = document.getElementById('handeler-status').innerText = 'Handel by addEventListener';
+        })
+
+        //Option 2 recap
+        document.getElementById('btn-update').addEventListener('click', function () {
+            const inputText = document.getElementById('input-filed');
+            const inputValue = document.getElementById('para').innerText = inputText.value;
+            inputText.value = '';
+        })
+
+    </script>
+</body>
+
+</html>
